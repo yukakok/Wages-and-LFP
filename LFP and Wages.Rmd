@@ -24,7 +24,7 @@ cps <- read_csv("cps_wages_LFP.csv")
 ```{r preparation, cache = TRUE}
 #Using definition of the labor force, I exclude people who are under age 16
 #Also, I create dummy for unemployment and labor force for the easier data handling
-#Note: there are a lot of observations with 0 wage regardless of their positive inctot             However, excluding obs with 0 hourly wage and leaving obs with 0.0002 hourly wage           doesn't make much sense, so I will use all values to calculate the mean unless they         have NA here
+#Note: there are a lot of observations with 0 wage regardless of their positive inctot. However, excluding obs with 0 hourly wage and leaving obs with 0.0002 hourly wage doesn't make much sense, so I will use all values to calculate the mean unless they have NA here
 
 cps_lf <- cps %>% mutate(age = as.numeric(age)) %>%
                   filter(age > 15) %>%
